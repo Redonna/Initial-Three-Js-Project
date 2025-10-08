@@ -62,25 +62,23 @@ cylinder.position.set(4, 1.5, 0);
 cylinder.castShadow = true;
 scene.add(cylinder);
 
-// --- Right Light Source (orange) ---
+// Right Light Source (orange) 
 const pointLightRight = new THREE.PointLight(0xff7f50, 0.9, 25);
 pointLightRight.position.set(6, 5, 6);
 pointLightRight.castShadow = true;
 scene.add(pointLightRight);
 
-// --- Left Light Source (pink) ---
+// Left Light Source (pink) 
 const pointLightLeft = new THREE.PointLight(0xffb6c1, 0.9, 25);
 pointLightLeft.position.set(-6, 5, 6);
 pointLightLeft.castShadow = true;
 scene.add(pointLightLeft);
 
-// 🔥 Removed the visible light spheres (helpers)
-
 // Animation loop
 function animate() {
     requestAnimationFrame(animate);
     
-    // Rotate the geometries for visual interest
+    // Rotation
     cube.rotation.y += 0.005;
     sphere.rotation.x += 0.2;
     cylinder.rotation.y += 0.3;
@@ -88,7 +86,7 @@ function animate() {
     renderer.render(scene, camera);
 }
 
-// Handle window resize
+// Handling window resize
 function onWindowResize() {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
@@ -96,5 +94,5 @@ function onWindowResize() {
 }
 window.addEventListener('resize', onWindowResize);
 
-// Start the animation
+// Starting the animation
 animate();
