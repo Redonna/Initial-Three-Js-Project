@@ -1,28 +1,27 @@
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
-// === Canvas ===
+// Canvas
 const canvas = document.querySelector('.webgl')
 
-// === Sizes ===
+// Sizes 
 const sizes = {
     width: window.innerWidth,
     height: window.innerHeight
 }
 
-// === Scene ===
+// Scene
 const scene = new THREE.Scene()
-scene.background = new THREE.Color(0x000000) // pure black
+scene.background = new THREE.Color(0x000000) 
 
-// === Object ===
+// Object 
 const mesh = new THREE.Mesh(
     new THREE.BoxGeometry(1, 1, 1, 5, 5, 5),
     new THREE.MeshBasicMaterial({ color: 0xff0000, wireframe: true })
 )
 scene.add(mesh)
 
-// === Camera ===
-// Orthographic (you can swap for Perspective if you want)
+// Camera 
 const aspectRatio = sizes.width / sizes.height
 const camera = new THREE.OrthographicCamera(
     -aspectRatio, // left
@@ -35,7 +34,7 @@ const camera = new THREE.OrthographicCamera(
 camera.position.z = 3
 scene.add(camera)
 
-// === Renderer ===
+// Renderer
 const renderer = new THREE.WebGLRenderer({
     canvas: canvas,
     antialias: true
@@ -43,11 +42,11 @@ const renderer = new THREE.WebGLRenderer({
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
-// === Controls ===
+// Controls
 const controls = new OrbitControls(camera, canvas)
 controls.enableDamping = true
 
-// === Animation Loop ===
+// Animation Loop
 const animate = () => {
     controls.update()
     renderer.render(scene, camera)
@@ -55,7 +54,7 @@ const animate = () => {
 }
 animate()
 
-// === Resize Handling ===
+// Resize Handling
 window.addEventListener('resize', () => {
     sizes.width = window.innerWidth
     sizes.height = window.innerHeight
