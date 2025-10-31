@@ -1,0 +1,28 @@
+{
+  "name": "cg-assignment-1",
+  "version": "1.0.0",
+  "description": "Assignment I - 3D Campus Model using Three.js and Vite",
+  "main": "main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "three.js",
+    "3d",
+    "vite",
+    "webgl",
+    "campus",
+    "modeling"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "three": "^0.170.0"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
+
